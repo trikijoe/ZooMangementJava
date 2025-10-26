@@ -7,7 +7,7 @@ public class Penguin extends Aquatic {
 
     public Penguin() {}
 
-    public Penguin(String family, String name, int age, boolean isMammal , String habitat ,  float swimmingSpeed){
+    public Penguin(String family, String name, int age, boolean isMammal , String habitat ,  float swimmingSpeed)  throws InvalidAgeException{
         super(family, name, age, isMammal, habitat);
         this.swimmingDepth = swimmingSpeed;
     }

@@ -6,7 +6,7 @@ public  non-sealed class Terrestrial extends Animal{
 
     public Terrestrial(){}
 
-    public Terrestrial(String family, String name, int age, boolean isMammal , String nbrLegs ){
+    public Terrestrial(String family, String name, int age, boolean isMammal , String nbrLegs )  throws InvalidAgeException {
         super(family, name, age, isMammal);
         this.nbrLegs = nbrLegs;
     }

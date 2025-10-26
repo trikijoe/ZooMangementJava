@@ -2,7 +2,7 @@ package entities;
 
 public class Zoo {
 
-    static final int NUMBER_OF_CAGES = 25;
+    static final int NUMBER_OF_CAGES = 3;
     static final int NUMBER_OF_AQUATIC_ANIMAL = 10;
     private Animal[] animals;
     private Aquatic[] aquatics;
@@ -54,16 +54,15 @@ public class Zoo {
     }
 
 
-    public boolean addAnimal(Animal animal) {
-        if (searchAnimal(animal) != -1) {
-            return false;
+    public void addAnimal(Animal animal) throws ZooFullException, InvalidAgeException{
+        if (nbrAnimals >= NUMBER_OF_CAGES){
+            throw new ZooFullException("Le zoo est plein ");
         }
-        if(isZooFull()){
-            return false;
+        if (searchAnimal(animal) != -1) {
+            throw new IllegalArgumentException("lanimal existe deja ");
         }
         animals[nbrAnimals] = animal;
         nbrAnimals++;
-        return true;
     }
 
     public Boolean isZooFull() {

@@ -14,8 +14,8 @@ public sealed class Animal permits Aquatic , Terrestrial {
     //setter
     public void setFamily(String f){this.family=f;}
     public void setName(String n){this.name=n;}
-    public void setAge(int a){
-        if (a<0){System.out.println("Error: Age cannot be negative");}
+    public void setAge(int a) throws InvalidAgeException{
+        if (a<0){ throw new InvalidAgeException("age negatif ");}
         else{this.age=a;}
     }
     public void setMammal(boolean m){this.isMammal=m;}
@@ -23,10 +23,10 @@ public sealed class Animal permits Aquatic , Terrestrial {
 
     public  Animal(){}
 
-    public Animal(String family, String name, int age, boolean isMammal) {
+    public Animal(String family, String name, int age, boolean isMammal) throws InvalidAgeException {
         this.family = family;
         this.name = name;
-        this.age = age;
+        this.setAge(age);
         this.isMammal = isMammal;
     }
 
