@@ -39,5 +39,12 @@ public class Employe {
                 ", nomDepartement='" + nomDepartement + '\'' +
                 ", grade=" + grade +
                 '}';}
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Employe)) return false;
+        Employe other = (Employe) obj;
+        return this.id == other.id && this.nom.equalsIgnoreCase(other.nom);
+    }
 }
     
