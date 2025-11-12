@@ -119,6 +119,28 @@ public class Main {
             System.out.println("profondeur maximal de penguin  " + maxdepthpenguinSwimmingDepth);
 
             myZoo.displayNumberOfAquaticByType();
+
+
+            //prosit 8
+            SocieteArrayList societe = new SocieteArrayList();
+
+            Employe e1 = new Employe(3, "Triki", "Joe", "it", 3);
+            Employe e2 = new Employe(1, "Omar", "Fakh", "it", 1);
+
+            societe.ajouterEmploye(e1);
+            societe.ajouterEmploye(e2);
+
+            societe.displayEmployes();
+
+            societe.trierEmployesParId();
+            societe.displayEmployes();
+
+            societe.trierEmployeParNomDépartementEtGrade();
+            societe.displayEmployes();
+
+            societe.supprimerEmployer(e2);
+            societe.displayEmployes();
+
         }
     }
 }
