@@ -46,5 +46,13 @@ public class Employe {
         Employe other = (Employe) obj;
         return this.id == other.id && this.nom.equalsIgnoreCase(other.nom);
     }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + id;
+        result = 31 * result + nom.hashCode();
+        return  result;
+    }
 }
     
