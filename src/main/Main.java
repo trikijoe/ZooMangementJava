@@ -138,8 +138,26 @@ public class Main {
             societe.trierEmployeParNomDépartementEtGrade();
             societe.displayEmployes();
 
-            societe.supprimerEmployer(e2);
+            societe.supprimerEmployer(e2 );
             societe.displayEmployes();
+
+
+
+            // ==== prosit 10 ====//
+
+        Employe e3 = new Employe(1, "triki", "youssef", "it", 3);
+        Employe e4 = new Employe(2, "triki", "sami", "it", 3);
+
+        Departement d1 = new Departement(10, "info", 4);
+        Departement d2 = new Departement(20, "it", 11);
+
+        AffectationHashMap aff = new AffectationHashMap();
+
+        aff.ajouterEmployeDepartement(e1, d1);
+        aff.ajouterEmployeDepartement(e2, d2);
+        aff.ajouterEmployeDepartement(e1, d2);
+
+        aff.afficherEmployesEtDepartements();
 
         }
     }
